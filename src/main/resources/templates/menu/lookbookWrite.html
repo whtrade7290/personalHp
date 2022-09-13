@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="/fragments/header.html"></th:block>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  <title>Personal Home Page</title>
+
+  <meta name="description" content="Gridus vCard HTML Template is the professional responsive personal website template, based on the latest Bootstrap 3">
+  <meta name="keywords" content="html5, template, website, responsive, bootstrap">
+  <meta name="author" content="neuethemes">
+
+</head>
+<style>
+
+  .inputFileLabel{
+
+  }
+
+</style>
+
+<body id="mark" class="boxed">
+
+<!--Pre-Loader-->
+<div id="preloader"></div>
+
+<!-- Container -->
+<div class="content-wrap">
+
+  <div id="blogpost" class="inner-content">
+
+    <div class="container-fluid nopadding">
+
+      <div class="row nopadding">
+        <div class="col-md-3 nopadding"></div>
+        <div class="col-md-9 nopadding">
+        <form action="/lookbookWrite" method="post" enctype="multipart/form-data">
+          <section id="page-title" class="inner-section bg-color01"
+                   data-animation-origin="top"
+                   data-animation-duration="500"
+                   data-animation-delay="300"
+                   data-animation-distance="50px">
+            <div class="padding-50">
+              <div class="container-fluid nopadding">
+                <div class="col-md-12">
+                  <p><label>Title</label><input type="text" name="title" value="" size="60" class="" aria-required="true" aria-invalid="false"></p>
+                </div>
+                <div class="dividewhite2"></div>
+                <div class="post-meta"><span>by <a href="#!">Sam Anderson</a>,</span> <span>March 16, 2015</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Blog Block -->
+          <section class="inner-section bg-color01">
+
+            <div class="padding-50 text-center">
+
+              <img src="https://jeong-bucket.s3.ap-northeast-1.amazonaws.com/img/PersonalHp/polo.jpg" class="img-responsive"
+                   data-animation-origin="top"
+                   data-animation-duration="500"
+                   data-animation-delay="300"
+                   data-animation-distance="25px">
+
+
+
+              <div style="margin: 50px">
+                <label for="inputFileBtn" class="inputFileLabel">File</label>
+                <input type="file" id="inputFileBtn" name="filename">
+              </div>
+
+
+              <article class="post"
+                       data-animation-origin="top"
+                       data-animation-duration="500"
+                       data-animation-delay="300"
+                       data-animation-distance="25px">
+
+                <div class="dividewhite4"></div>
+
+                <div class="col-md-12">
+                  <p><label>Content</label><textarea name="Content" cols="60" rows="3" class="" aria-invalid="false"></textarea></p>
+                </div>
+
+                <div class="dividewhite4"></div>
+                <div class="text-right">
+                  <button type="submit" class="btn btn-primary">write</button>
+                  <a class="btn btn-primary" th:href="@{/lookbook}">cancel</a>
+                </div>
+
+              </article>
+
+            </div>
+          </section>
+        </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<th:block th:replace="/fragments/footer.html"></th:block>
+</body>
+
+</html>
