@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="/fragments/header.html"></th:block>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>Personal Home Page</title>
+
+    <meta name="description" content="Gridus vCard HTML Template is the professional responsive personal website template, based on the latest Bootstrap 3">
+    <meta name="keywords" content="html5, template, website, responsive, bootstrap">
+    <meta name="author" content="neuethemes">
+
+</head>
+
+<body id="mark" class="boxed">
+
+<!--Pre-Loader-->
+<div id="preloader"></div>
+
+<!-- Container -->
+<div class="content-wrap">
+
+    <div id="blog" class="inner-content">
+
+        <div class="container-fluid nopadding">
+
+            <div class="row nopadding">
+                <div class="col-md-3 nopadding"></div>
+                <div class="col-md-9 nopadding">
+
+                    <section id="page-title" class="inner-section ui-block-color07">
+                        <div class="padding-50">
+                            <h2 class="font-accident-two-extralight color01 uppercase"
+                                data-animation-origin="right"
+                                data-animation-duration="400"
+                                data-animation-delay="100"
+                                data-animation-distance="50px">Blog</h2>
+                            <h4 class="font-accident-two-normal color01 uppercase subtitle"
+                                data-animation-origin="right"
+                                data-animation-duration="400"
+                                data-animation-delay="200"
+                                data-animation-distance="50px">Made for Creative Professionals</h4>
+                            <p class="small color01"
+                               data-animation-origin="right"
+                               data-animation-duration="400"
+                               data-animation-delay="300"
+                               data-animation-distance="50px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id metus purus. Ut vulputate, est vel tincidunt mattis, orci neque iaculis lectus, et interdum quam felis vel tortor. Fusce ultrices dui quis nunc dignissim faucibus.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Blog Block -->
+                    <section class="inner-section bg-color01" data-section="blog">
+
+                        <div class="padding-50">
+
+                            <div class="dividewhite4"></div>
+
+                            <div id="isotope-filters" class="port-filter port-filter-light text-center"
+                                 data-animation-origin="top"
+                                 data-animation-duration="400"
+                                 data-animation-delay="300"
+                                 data-animation-distance="10px">
+                                <ul>
+                                    <li><a href="#all" data-filter="*">All Categories</a></li>
+                                    <li><a href="#design" data-filter=".design">Design</a></li>
+                                    <li><a href="#branding" data-filter=".branding">Branding</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dividewhite4"></div>
+
+                            <div class="row">
+
+                                <div class="grid container-fluid text-center">
+
+                                    <div id="posts" class="row popup-container">
+
+                                        <div class="grid-item grid-sizer branding col-md-4 col-sm-6" th:each="item : ${lookbooks}">
+                                            <div class="item-wrap">
+                                                <figure data-animation-origin="right"
+                                                        data-animation-duration="500"
+                                                        data-animation-delay="500"
+                                                        data-animation-distance="0px">
+                                                    <div class="popup-call">
+                                                        <a href="/img/lookbook/06.jpg" class="gallery-item"><i class="flaticon-arrows-4"></i></a>
+                                                    </div>
+                                                    <img th:src="${item.img_url}" class="img-responsive" alt="img03"/>
+                                                    <figcaption>
+                                                        <div class="post-meta"><span>by <a href="#" th:text="${item.writer}">Sam Anderson</a>,</span> <span th:text="${item.save_time}">March 16, 2015</span></div>
+                                                        <div class="post-header">
+                                                            <h5><a href="#" th:text="${item.title}">Funny Things done</a></h5>
+                                                        </div>
+                                                        <div class="post-entry">
+                                                            <p th:text="${item.content}">Aliquam gravida tincidunt congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas</p>
+                                                        </div>
+                                                        <div class="post-tag pull-left">
+                                                            <span><a href="#branding" data-filter=".branding">Branding</a></span>
+                                                        </div>
+                                                        <div class="post-more-link pull-right"><a href="blogpost.html">More<i class="fa fa-long-arrow-right right"></i></a></div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="dividewhite6"></div>
+
+                        </div>
+
+                    </section>
+                    <!-- /Blog Block -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<th:block th:replace="/fragments/footer.html"></th:block>
+</body>
+
+</html>
