@@ -9,4 +9,8 @@ import java.util.List;
 public interface LookbookMapper {
 
     List<LookbookModel> selectLookbook();
+
+    long lookbookInsert(LookbookModel lookbookModel);
+
+    LookbookModel selectLookbookDetail(int num);
 }

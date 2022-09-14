@@ -7,6 +7,7 @@ public class LookbookModel {
 
     private int num;
     private String img_url;
+    private String filename;
     private String writer;
     private String save_time;
     private String title;

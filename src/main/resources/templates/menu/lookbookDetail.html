@@ -30,14 +30,14 @@
 <!-- Container -->
 <div class="content-wrap">
 
-  <div id="blogpost" class="inner-content">
+  <div id="blogpost" class="inner-content" th:object="${lookbookModel}">
 
     <div class="container-fluid nopadding">
 
       <div class="row nopadding">
         <div class="col-md-3 nopadding"></div>
         <div class="col-md-9 nopadding">
-        <form action="/lookbookWrite" method="post" enctype="multipart/form-data">
+
           <section id="page-title" class="inner-section bg-color01"
                    data-animation-origin="top"
                    data-animation-duration="500"
@@ -45,11 +45,10 @@
                    data-animation-distance="50px">
             <div class="padding-50">
               <div class="container-fluid nopadding">
-                <div class="col-md-12">
-                  <p><label>Title</label><input type="text" name="title" value="" size="60" class="" aria-required="true" aria-invalid="false"></p>
-                </div>
+                <h2 class="font-accident-two-normal uppercase" th:text="*{title}">My Friend's new Album</h2>
                 <div class="dividewhite2"></div>
-                <div class="post-meta"><span>by <a href="#!">Sam Anderson</a>,</span> <span>March 16, 2015</span></div>
+                <div class="post-meta"><span>by <a href="#!">Jeong.guji</a>,</span> <span th:text="*{save_time}">March 16, 2015</span></div>
+                <div class="post-tag pull-left"><span><a>Branding</a>,</span><span><a>Design</a></span></div>
               </div>
             </div>
           </section>
@@ -57,21 +56,13 @@
           <!-- Blog Block -->
           <section class="inner-section bg-color01">
 
-            <div class="padding-50 text-center">
+            <div class="padding-50">
 
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" class="img-responsive"
+              <img th:src="|*{img_url}*{filename}|" class="img-responsive"
                    data-animation-origin="top"
                    data-animation-duration="500"
                    data-animation-delay="300"
-                   data-animation-distance="25px" id="imgId">
-
-
-
-              <div style="margin: 50px">
-                <label for="inputFileBtn" class="btn btn-outline-secondary">File</label>
-                <input type="file" id="inputFileBtn" name="uploadFile" onchange="setThumbnail(event)">
-              </div>
-
+                   data-animation-distance="25px">
 
               <article class="post"
                        data-animation-origin="top"
@@ -79,24 +70,18 @@
                        data-animation-delay="300"
                        data-animation-distance="25px">
 
-                <div class="dividewhite4"></div>
+                <div class="dividewhite6"></div>
 
-                <div class="col-md-12">
-                  <p><label>Content</label><textarea name="Content" cols="60" rows="3" class="" aria-invalid="false"></textarea></p>
-                </div>
-
-                <div class="dividewhite4"></div>
-                <div class="text-right">
-                  <button type="submit" class="btn btn-primary">write</button>
-                  <a class="btn btn-primary" th:href="@{/lookbook}">cancel</a>
-                </div>
+                <p th:text="*{content}">
+                  The system utilised prefabricated light gauge steel frames which could be built economically up to a maximum of 4 storeys. The frames were finished in a variety of claddings and their modular nature could be employed to produce architecturally satisfying buildings. Initially developed solely for schools, the system was also used to provide offices and housing. Important examples include many of the Hertfordshire schools, some of which have since been listed.
+                </p>
 
               </article>
 
             </div>
-          </section>
-        </form>
 
+          </section>
+          <!-- /Blog Block -->
 
         </div>
       </div>

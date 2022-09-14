@@ -95,9 +95,9 @@
                                                         data-animation-delay="500"
                                                         data-animation-distance="0px">
                                                     <div class="popup-call">
-                                                        <a href="/img/lookbook/06.jpg" class="gallery-item"><i class="flaticon-arrows-4"></i></a>
+                                                        <a th:href="|${item.img_url}${item.filename}|" class="gallery-item"><i class="flaticon-arrows-4"></i></a>
                                                     </div>
-                                                    <img th:src="${item.img_url}" class="img-responsive" alt="img03"/>
+                                                    <img th:src="|${item.img_url}${item.filename}|" class="img-responsive" alt="img03"/>
                                                     <figcaption>
                                                         <div class="post-meta"><span>by <a href="#" th:text="${item.writer}">Sam Anderson</a>,</span> <span th:text="${item.save_time}">March 16, 2015</span></div>
                                                         <div class="post-header">
@@ -109,7 +109,7 @@
                                                         <div class="post-tag pull-left">
                                                             <span><a href="#branding" data-filter=".branding">Branding</a></span>
                                                         </div>
-                                                        <div class="post-more-link pull-right"><a href="blogpost.html">More<i class="fa fa-long-arrow-right right"></i></a></div>
+                                                        <div class="post-more-link pull-right"><a th:href="@{/lookbookDetail(num=${item.num})}">More<i class="fa fa-long-arrow-right right"></i></a></div>
                                                     </figcaption>
                                                 </figure>
                                             </div>

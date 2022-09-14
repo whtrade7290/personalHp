@@ -5,7 +5,29 @@
 <mapper namespace="com.example.exam.Mapper.LookbookMapper">
 
     <select id="selectLookbook" resultType="com.example.exam.Model.LookbookModel">
-        SELECT num, img_url, writer, save_time, title, content FROM lookbook
+        SELECT num, img_url, filename, writer, save_time, title, content FROM lookbook
     </select>
+
+    <select id="selectLookbookDetail" resultType="com.example.exam.Model.LookbookModel">
+        SELECT num, img_url, filename, writer, save_time, title, content FROM PersonalHp.lookbook WHERE num = ${num}
+    </select>
+
+    <insert id="lookbookInsert">
+        INSERT INTO lookbook(
+            img_url,
+            filename,
+            writer,
+            save_time,
+            title,
+            content
+        ) values (
+                     #{img_url, jdbcType=VARCHAR},
+                     #{filename, jdbcType=VARCHAR},
+                     #{writer, jdbcType=VARCHAR},
+                     #{save_time, jdbcType=VARCHAR},
+                     #{title, jdbcType=VARCHAR},
+                     #{content, jdbcType=VARCHAR}
+                 )
+    </insert>
 
 </mapper>
