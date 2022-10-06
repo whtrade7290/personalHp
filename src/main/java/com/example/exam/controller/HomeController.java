@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
-
+//테스트
     @Autowired
     private InfoService infoService;
 
