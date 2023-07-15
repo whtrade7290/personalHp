@@ -87,4 +87,6 @@ public class LookBookController {
 
         return "/menu/lookbookDetail";
     }
+
+    // 테스트
 }

@@ -26,7 +26,7 @@ import java.net.URLEncoder;
 @Controller
 public class HomeController {
 
-
+//테스트
     @Autowired
     private InfoService infoService;
 
